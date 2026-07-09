@@ -22,6 +22,25 @@
 <h1>👨‍🎓 Student Management</h1>
 
 <button id="addBtn">+ Add Student</button>
+  <div id="studentForm" style="display:none; margin:20px 0;">
+
+<h2>Add New Student</h2>
+
+<input type="text" id="studentId" placeholder="Student ID">
+
+<input type="text" id="studentName" placeholder="Student Name">
+
+<input type="text" id="studentClass" placeholder="Class">
+
+<input type="text" id="mobile" placeholder="Mobile Number">
+
+<input type="date" id="expiryDate">
+
+<input type="number" id="scanLimit" placeholder="Scan Limit" value="100">
+
+<button onclick="saveStudent()">Save Student</button>
+
+</div>
 
 <input
 type="text"
