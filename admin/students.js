@@ -179,3 +179,38 @@ function deleteStudent(studentId) {
 
 }
 
+// Edit Student
+function editStudent(studentId) {
+
+    db.collection("qrData")
+      .doc(studentId)
+      .get()
+      .then((doc) => {
+
+          if (!doc.exists) {
+              alert("Student not found.");
+              return;
+          }
+
+          const d = doc.data();
+
+          editingStudentId = studentId;
+
+          document.getElementById("studentForm").style.display = "block";
+
+          document.getElementById("studentId").value = studentId;
+          document.getElementById("studentName").value = d.studentName || "";
+          document.getElementById("studentClass").value = d.studentClass || "";
+          document.getElementById("mobile").value = d.mobile || "";
+          document.getElementById("expiryDate").value = d.expiryDate || "";
+          document.getElementById("scanLimit").value = d.scanLimit || 100;
+
+      })
+      .catch((error) => {
+
+          alert(error.message);
+
+      });
+
+}
+
