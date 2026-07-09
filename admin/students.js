@@ -69,6 +69,8 @@ function loadStudents() {
 }
 
 loadStudents();
+let editingStudentId = null;
+
 // Show Form
 document.getElementById("addBtn").onclick = function () {
 
