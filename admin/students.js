@@ -129,3 +129,25 @@ function saveStudent() {
     });
 
 }
+function searchStudents() {
+
+    const filter = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const rows = document
+        .querySelectorAll("#studentList tr");
+
+    rows.forEach(row => {
+
+        const text = row.innerText.toLowerCase();
+
+        row.style.display = text.includes(filter)
+            ? ""
+            : "none";
+
+    });
+
+}
+
