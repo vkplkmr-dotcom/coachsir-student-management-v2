@@ -15,16 +15,15 @@
 </head>
 
 <body>
-
 <div class="sidebar">
 
 <h2>COACHsir</h2>
 
 <a href="dashboard.html">🏠 Dashboard</a>
 <a href="students.html">👨‍🎓 Students</a>
-<a href="attendance.html">📷 Attendance</a>
+<a href="attendance.html">📅 Attendance</a>
 <a href="cards.html">💳 ID Cards</a>
-<a href="settings.html">⚙ Settings</a>
+<a href="settings.html">⚙️ Settings</a>
 
 <button onclick="logout()">Logout</button>
 
@@ -33,7 +32,8 @@
 <div class="main">
 
 <div class="topbar">
-<h1>Admin Dashboard</h1>
+<h1>COACHsir Student Management System</h1>
+<p>Professional Admin Dashboard</p>
 </div>
 
 <div class="cards">
@@ -44,20 +44,27 @@
 </div>
 
 <div class="card">
+<h3>Active Students</h3>
+<h1 id="activeStudents">0</h1>
+</div>
+
+<div class="card">
 <h3>Today's Attendance</h3>
 <h1 id="todayAttendance">0</h1>
 </div>
 
 <div class="card">
-<h3>Active Students</h3>
-<h1 id="activeStudents">0</h1>
+<h3>QR Scans</h3>
+<h1 id="totalScans">0</h1>
 </div>
 
 </div>
 
 </div>
+  
 
 <script src="dashboard.js"></script>
+
 
 </body>
 </html>
