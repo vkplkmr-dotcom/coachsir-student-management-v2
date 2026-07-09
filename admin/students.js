@@ -105,7 +105,9 @@ function saveStudent() {
 
     }
 
-    db.collection("qrData").doc(id).set({
+   const docId = editingStudentId || id;
+
+db.collection("qrData").doc(docId).set({
 
         studentName: name,
         studentClass: studentClass,
@@ -119,9 +121,12 @@ function saveStudent() {
 
     }).then(() => {
 
-        alert("Student Added Successfully!");
-
+       alert(editingStudentId
+    ? "Student Updated Successfully!"
+    : "Student Added Successfully!");
         loadStudents();
+
+    editingStudentId = null;
 
         document.getElementById("studentForm").style.display = "none";
 
