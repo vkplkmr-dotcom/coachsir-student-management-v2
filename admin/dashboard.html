@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>COACHsir Admin Dashboard</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>COACHsir</h2>
+
+<a href="dashboard.html">🏠 Dashboard</a>
+<a href="students.html">👨‍🎓 Students</a>
+<a href="attendance.html">📷 Attendance</a>
+<a href="cards.html">💳 ID Cards</a>
+<a href="settings.html">⚙ Settings</a>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+<h1>Admin Dashboard</h1>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Students</h3>
+<h1 id="totalStudents">0</h1>
+</div>
+
+<div class="card">
+<h3>Today's Attendance</h3>
+<h1 id="todayAttendance">0</h1>
+</div>
+
+<div class="card">
+<h3>Active Students</h3>
+<h1 id="activeStudents">0</h1>
+</div>
+
+</div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
