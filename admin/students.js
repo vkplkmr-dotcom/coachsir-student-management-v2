@@ -68,3 +68,64 @@ function loadStudents() {
 }
 
 loadStudents();
+// Show Form
+document.getElementById("addBtn").onclick = function () {
+
+    const form = document.getElementById("studentForm");
+
+    form.style.display =
+        form.style.display === "none" ? "block" : "none";
+
+};
+
+
+// Save Student
+function saveStudent() {
+
+    const id = document.getElementById("studentId").value.trim();
+
+    const name = document.getElementById("studentName").value.trim();
+
+    const studentClass = document.getElementById("studentClass").value.trim();
+
+    const mobile = document.getElementById("mobile").value.trim();
+
+    const expiryDate = document.getElementById("expiryDate").value;
+
+    const scanLimit = Number(document.getElementById("scanLimit").value);
+
+    if (!id || !name) {
+
+        alert("Student ID and Name are required.");
+
+        return;
+
+    }
+
+    db.collection("qrData").doc(id).set({
+
+        studentName: name,
+        studentClass: studentClass,
+        mobile: mobile,
+        expiryDate: expiryDate,
+        scanLimit: scanLimit,
+        count: 0,
+        active: true,
+        unlimited: false,
+        createdAt: new Date()
+
+    }).then(() => {
+
+        alert("Student Added Successfully!");
+
+        loadStudents();
+
+        document.getElementById("studentForm").style.display = "none";
+
+    }).catch(err => {
+
+        alert(err.message);
+
+    });
+
+}
