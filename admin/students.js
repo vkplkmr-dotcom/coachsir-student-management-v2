@@ -152,3 +152,28 @@ function searchStudents() {
 
 }
 
+// Delete Student
+function deleteStudent(studentId) {
+
+    const ok = confirm("Are you sure you want to delete this student?");
+
+    if (!ok) return;
+
+    db.collection("qrData")
+        .doc(studentId)
+        .delete()
+        .then(() => {
+
+            alert("Student Deleted Successfully!");
+
+            loadStudents();
+
+        })
+        .catch((error) => {
+
+            alert(error.message);
+
+        });
+
+}
+
