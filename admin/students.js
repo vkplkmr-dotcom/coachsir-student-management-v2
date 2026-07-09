@@ -37,10 +37,11 @@ function loadStudents() {
 
                     <td>${d.expiryDate || "-"}</td>
 
-                    <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </td>
+                   <td>
+    <button onclick="editStudent('${doc.id}')">✏️ Edit</button>
+
+    <button onclick="deleteStudent('${doc.id}')">🗑️ Delete</button>
+</td>
 
                 </tr>
                 `;
